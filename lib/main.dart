@@ -3,25 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Widget Study"),
-        centerTitle: false,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.play_circle),
-            onPressed: () {
-              print("flutter app bar");
-            },
-          )
-        ],
-      ),
       body: FlutterWidgetStudy(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.bubble_chart),
-        onPressed: () {
-          print("flutter fab");
-        },
-      ),
     ),
   ));
 }
@@ -32,9 +14,22 @@ class FlutterWidgetStudy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Text(
-        "Flutter Widger Study",
-        style: TextStyle(color: Color(0xFF008BFF)),
+      child: Container(
+        width: 200,
+        height: 200,
+        margin: EdgeInsets.symmetric(vertical: 150, horizontal: 100),
+        padding: EdgeInsets.fromLTRB(10, 20, 40, 40),
+        decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(color: Colors.black.withOpacity(0.3), offset: Offset(16, 16), blurRadius: 30, spreadRadius: 10),
+              BoxShadow(color: Colors.blue, offset: Offset(-16, -16), blurRadius: 30, spreadRadius: 10)
+            ],
+            border: Border.all(
+                color: Colors.green, width: 5, style: BorderStyle.solid)),
+        child: Text(
+            "Container Study Container Study Container Study Container Study Container Study Container Study"),
       ),
     );
   }
